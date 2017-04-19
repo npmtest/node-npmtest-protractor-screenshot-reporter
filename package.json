@@ -1,1 +1,40 @@
-{     "devDependencies": {         "protractor-screenshot-reporter": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-protractor-screenshot-reporter",     "homepage": "https://github.com/npmtest/node-npmtest-protractor-screenshot-reporter",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-protractor-screenshot-reporter.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [protractor-screenshot-reporter (v0.0.5)](https://github.com/swissmanu/protractor-screenshot-reporter)  [![npm package](https://img.shields.io/npm/v/npmtest-protractor-screenshot-reporter.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-protractor-screenshot-reporter) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-protractor-screenshot-reporter.svg)](https://travis-ci.org/npmtest/node-npmtest-protractor-screenshot-reporter)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "protractor-screenshot-reporter": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-protractor-screenshot-reporter",
+    "keywords": [
+        "coverage",
+        "test",
+        "protractor-screenshot-reporter"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_protractor_screenshot_reporter.js",
+    "name": "npmtest-protractor-screenshot-reporter",
+    "nameAlias": "npmtest_protractor_screenshot_reporter",
+    "nameOriginal": "npmtest-protractor-screenshot-reporter",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-protractor-screenshot-reporter.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
